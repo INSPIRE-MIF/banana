@@ -50,7 +50,7 @@
   "rows": [
     {
       "title": "Query and Time Window",
-      "height": "150px",
+      "height": "200px",
       "editable": true,
       "collapse": false,
       "collapsable": true,
