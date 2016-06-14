@@ -15,6 +15,21 @@
 
 <div class="row">
     <div class="col-sm-4 col-md-4">
+      <label class="small">Mode</label>
+      <select class="input-large form-control" ng-model="panel.mode" ng-options="f for f in tagCloudMode"></select>
+      </span>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <label class="small">Sort</label>
+      <select class="input-large form-control" ng-model="panel.sort" ng-options="f for f in facetSort"></select>
+      </span>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <label class="small">Toggle layout</label>
+      <select class="input-large form-control" ng-model="panel.toggleLayout" ng-options="f for f in toggleLayout"></select>
+      </span>
+    </div>
+    <div class="col-sm-4 col-md-4" ng-show="panel.mode === 'tagcloud'">
         <label class="small">Text Alignment</label>
         <select class="input-large form-control" ng-model="panel.alignment" ng-options="f for f in ['horizontal','vertical(+90)','vertical(-90)','vertical and horizontal','Random']"></select>
         </span>
@@ -25,13 +40,13 @@
              ng-model="panel.isCountDisplayed"
              ng-checked="panel.isCountDisplayed">
     </div>
-    <div class="col-sm-2 col-md-2">
+    <div class="col-sm-2 col-md-2" ng-show="panel.mode === 'tagcloud'">
       <label class="small">Adjust size based on count</label>
       <input type="checkbox"
              ng-model="panel.isSizeAdjusted"
              ng-checked="panel.isSizeAdjusted">
     </div>
-    <div class="col-sm-4 col-md-4">
+    <div class="col-sm-4 col-md-4" ng-show="panel.mode === 'tagcloud'">
         <label class="small">Font Scale
         <tip> Increase the size of the word font</tip>
         </label>

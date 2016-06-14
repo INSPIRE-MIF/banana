@@ -4,5 +4,30 @@
       cursor: pointer
     }
     </style>
-    <div tagcloud-chart style="overflow:hidden; position:relative"></div>
+    <div data-ng-show="panel.mode === 'tagcloud'" tagcloud-chart style="overflow:hidden; position:relative"></div>
+    <div data-ng-show="panel.mode === 'toggle'">
+      <div class="btn-group" role="group"
+           ng-show="panel.toggleLayout === 'buttons'">
+        <button type="button"
+                data-ng-repeat="d in initialData"
+                ng-click="setFilter(d)"
+                ng-class="{'active': d.label == current}"
+                class="btn btn-default">
+          {{d.label}}
+          <span ng-show="panel.isCountDisplayed">({{d.data}})</span>
+        </button>
+      </div>
+      <ul class="nav"
+          ng-hide="panel.toggleLayout === 'buttons'"
+          ng-class="{'nav-pills': panel.toggleLayout === 'pills', 'nav-tabs': panel.toggleLayout === 'tabs'}">
+        <li role="presentation"
+            ng-class="{'active': d.label == current}"
+            data-ng-repeat="d in initialData">
+          <a ng-click="setFilter(d)">
+            {{d.label}}
+            <span ng-show="panel.isCountDisplayed">({{d.data}})</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 </div>

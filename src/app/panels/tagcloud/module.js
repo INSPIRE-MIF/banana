@@ -38,6 +38,9 @@ define([
       };
 
       // Set and populate defaults
+      $scope.tagCloudMode = ['tagcloud','toggle'];
+      $scope.facetSort = ['count','index'];
+      $scope.toggleLayout = ['pills', 'tabs', 'buttons'];
       var _d = {
         queries: {
           mode: 'all',
@@ -46,6 +49,9 @@ define([
           custom: ''
         },
         field: '',
+        mode: $scope.tagCloudMode[0],
+        sort: $scope.facetSort[0],
+        toggleLayout: $scope.toggleLayout[0],
         exclude : [],
         size: 10,
         alignment: 'vertical and horizontal',
@@ -63,7 +69,10 @@ define([
         $scope.$on('refresh', function() {
           $scope.get_data();
         });
-        $scope.get_data();
+        $scope.initialData = null;
+        $scope.get_data().then(function (){
+          $scope.setFilter($scope.initialData[0]);
+        });
       };
 
       $scope.alertInvalidField = function(message) {
@@ -106,7 +115,7 @@ define([
 
         var wt_json = '&wt=json';
         var rows_limit = '&rows=0'; // for terms, we do not need the actual response doc, so set rows=0
-        var facet = '&facet=true&facet.field=' + $scope.panel.field + '&facet.limit=' + $scope.panel.size;
+        var facet = '&facet=true&facet.sort=' + $scope.panel.sort + '&facet.field=' + $scope.panel.field + '&facet.limit=' + $scope.panel.size;
 
         // Set the panel's query
         $scope.panel.queries.query = querySrv.getORquery() + wt_json + rows_limit + fq + exclude_filter + facet;
@@ -119,6 +128,7 @@ define([
         }
 
         results = request.doSearch();
+
 
         // Populate scope when we have results
         results.then(function(results) {
@@ -162,8 +172,13 @@ define([
               }
             }
           });
+
+          if ($scope.initialData === null) {
+            $scope.initialData = $scope.data;
+          }
           $scope.$emit('render');
         });
+        return results;
       };
 
       $scope.build_search = function(term,negate) {
@@ -208,39 +223,54 @@ define([
             render_panel();
           });
 
+          var filterId = undefined;
+          scope.current = null;
+          scope.setFilter = function (d) {
+            filterId = filterSrv.set({
+                                       type: 'querystring',
+                                       query: scope.panel.field +
+                                              ':' + d.label + ''
+                                     }, filterId);
+            scope.current = d.label;
+            dashboard.refresh();
+          }
           // Function for rendering panel
           function render_panel() {
 
-            element.html("");
+            if (scope.panel.mode === 'toggle') {
 
-            var el = element[0];
-            var width = element.parent().width();
-            var height = parseInt(scope.row.height);
+            } else {
+              element.html("");
 
-            var fill = d3.scale.category20();
-            var color = d3.scale.linear()
-              .domain([0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100])
-              .range(["#7EB26D", "#EAB839", "#6ED0E0", "#EF843C", "#E24D42", "#1F78C1", "#BA43A9", "#705DA0", "#890F02", "#0A437C", "#6D1F62", "#584477"]);
+              var el = element[0];
+              var width = element.parent().width();
+              var height = parseInt(scope.row.height);
 
-            var scale = d3.scale.linear().domain([0, scope.maxRatio]).range([0, 30]);
-            var randomRotate = d3.scale.linear().domain([0, 1]).range([-90, 90]);
+              var fill = d3.scale.category20();
+              var color = d3.scale.linear()
+                .domain([0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100])
+                .range(["#7EB26D", "#EAB839", "#6ED0E0", "#EF843C", "#E24D42", "#1F78C1", "#BA43A9",
+                        "#705DA0", "#890F02", "#0A437C", "#6D1F62", "#584477"]);
 
-            d3.layout.cloud().size([width - 20, height - 20])
-              .words(scope.data.map(function(d) {
-                return {
-                  value: d.label,
-                  text: d.label + (scope.panel.isCountDisplayed ? ' (' + d.data + ')' : ''),
-                  size: (scope.panel.isSizeAdjusted ?
-                    (5 +
-                      scale(d.data / scope.hits) +
-                      parseInt(scope.panel.fontScale)
-                    ) :
-                    parseInt(scope.panel.fontScale)
-                  )
-                };
-              })).rotate(function() {
+              var scale = d3.scale.linear().domain([0, scope.maxRatio]).range([0, 30]);
+              var randomRotate = d3.scale.linear().domain([0, 1]).range([-90, 90]);
+
+              d3.layout.cloud().size([width - 20, height - 20])
+                .words(scope.data.map(function (d) {
+                  return {
+                    value: d.label,
+                    text: d.label + (scope.panel.isCountDisplayed ? ' (' + d.data + ')' : ''),
+                    size: (scope.panel.isSizeAdjusted ?
+                           (5 +
+                            scale(d.data / scope.hits) +
+                            parseInt(scope.panel.fontScale)
+                           ) :
+                           parseInt(scope.panel.fontScale)
+                    )
+                  };
+                })).rotate(function () {
                 if (scope.panel.alignment == 'vertical and horizontal')
-                  return~~ (Math.random() * 2) * -90;
+                  return ~~(Math.random() * 2) * -90;
                 else if (scope.panel.alignment == 'horizontal')
                   return 0;
                 else if (scope.panel.alignment == 'vertical(+90)')
@@ -250,42 +280,45 @@ define([
                 else
                   return randomRotate(Math.random());
               })
-              .font("sans-serif")
-              .fontSize(function(d) {
-                return d.size;
-              })
-              .on("end", draw)
-              .start();
+                .font("sans-serif")
+                .fontSize(function (d) {
+                  return d.size;
+                })
+                .on("end", draw)
+                .start();
 
-            function draw(words) {
-              d3.select(el).append("svg")
-                .attr("width", width)
-                .attr("height", height)
-                .append("g")
-                .attr("transform", "translate(" + (width - 20) / 2 + "," + (height - 20) / 2 + ")")
-                .selectAll("text")
-                .data(words)
-                .enter().append("text")
-                .style("font-size", function(d) {
-                  return d.size + "px";
-                })
-                .style("font-family", "Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans-serif'")
-                .style("fill", function(d, i) {
-                  //return  color(i);
-                  return fill(i);
-                })
-                .attr("text-anchor", "middle")
-                .attr("transform", function(d) {
-                  return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-                })
-                .text(function(d) {
-                  return d.text;
-                })
-                .on("click", function(d) {
-                  if(d) {
-                    scope.build_search(d.value);
-                  }
-                });
+              function draw(words) {
+                d3.select(el).append("svg")
+                  .attr("width", width)
+                  .attr("height", height)
+                  .append("g")
+                  .attr("transform",
+                        "translate(" + (width - 20) / 2 + "," + (height - 20) / 2 + ")")
+                  .selectAll("text")
+                  .data(words)
+                  .enter().append("text")
+                  .style("font-size", function (d) {
+                    return d.size + "px";
+                  })
+                  .style("font-family",
+                         "Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans-serif'")
+                  .style("fill", function (d, i) {
+                    //return  color(i);
+                    return fill(i);
+                  })
+                  .attr("text-anchor", "middle")
+                  .attr("transform", function (d) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                  })
+                  .text(function (d) {
+                    return d.text;
+                  })
+                  .on("click", function (d) {
+                    if (d) {
+                      scope.build_search(d.value);
+                    }
+                  });
+              }
             }
           }
 
