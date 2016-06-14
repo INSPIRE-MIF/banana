@@ -1,8 +1,28 @@
+<!--
+  ~ Copyright 2014-2016 European Environment Agency
+  ~
+  ~ Licensed under the EUPL, Version 1.1 or – as soon
+  ~ they will be approved by the European Commission -
+  ~ subsequent versions of the EUPL (the "Licence");
+  ~ You may not use this work except in compliance
+  ~ with the Licence.
+  ~ You may obtain a copy of the Licence at:
+  ~
+  ~ https://joinup.ec.europa.eu/community/eupl/og_page/eupl
+  ~
+  ~ Unless required by applicable law or agreed to in
+  ~ writing, software distributed under the Licence is
+  ~ distributed on an "AS IS" basis,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+  ~ either express or implied.
+  ~ See the Licence for the specific language governing
+  ~ permissions and limitations under the Licence.
+  -->
+
 <!-- This file is responsible for nav bar of the dashboard -->
 <li class="dropdown" bs-tooltip="'Collections'" data-placement="bottom" style="padding-top:5px;" ng-show="dashboard.current.loader.dropdown_collections">
   <select class="collection-picker-select" ng-model="dashboard.current.solr.core_name" ng-change="dashboard.refresh()" ng-options="c as c for c in dashboard.current.solr.core_list"></select>
 </li>
-
 <li bs-tooltip="'New timeseries dashboard'" data-placement="bottom" data-ng-hide="readonly">
   <a class="link" bs-modal="solrSettingsModal" data-content-template="app/partials/solrSettings.html" ng-click="$scope.type='default-ts';" ><i class="fa fa-clock-o"></i></a></li>
 <li bs-tooltip="'New dashboard'" data-placement="bottom" data-ng-hide="readonly">
@@ -108,3 +128,13 @@
     <i class="fa fa-cog pointer" container="body" bs-tooltip="dashboardEditorTooltip" data-placement="bottom"></i>
   </a>
 </li>
+<button type="button"
+        style="margin-top: 8px; margin-bottom: 8px;"
+        class="btn btn-default btn-xs navbar-btn"
+        ng-class="{'active': readonly}"
+        ng-click="setAsReadOnly()"
+        ng-hide="authenticated === false"
+        translate="">
+  previewReadonly
+</button>
+&nbsp;
