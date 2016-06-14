@@ -3,10 +3,10 @@
   <!-- Rows -->
   <div class="kibana-row row" ng-controller="RowCtrl" ng-repeat="(row_name, row) in dashboard.current.rows" ng-style="row_style(row)">
     <div class="row-control">
-      <div class="row" style="padding:0px;margin:0px;position:relative;" data-ng-hide="readonly">
+      <div class="row" style="padding:0px;margin:0px;position:relative;">
 
         <div class="row-close col-sm-12 col-md-12" ng-show="row.collapse" data-placement="bottom">
-          <span class="row-button" bs-modal="rowEditorModal" data-content-template="app/partials/roweditor.html">
+          <span class="row-button" bs-modal="rowEditorModal" data-content-template="app/partials/roweditor.html" data-ng-hide="readonly">
             <i bs-tooltip="'Configure row'" container="body" data-placement="right" ng-show="row.editable" class="fa fa-cog pointer"></i>
           </span>
           <span class="row-button" ng-click="toggle_row(row)" ng-show="row.collapsable">
@@ -20,15 +20,15 @@
             <i bs-tooltip="'Hide row'" data-placement="right" class="fa fa-compress" ng-click="toggle_row(row)"></i>
             <br>
           </span>
-          <span bs-modal="rowEditorModal" data-content-template="app/partials/roweditor.html" ng-show="row.editable">
+          <span bs-modal="rowEditorModal" data-content-template="app/partials/roweditor.html" ng-show="row.editable" data-ng-hide="readonly">
             <i bs-tooltip="'Configure row'" data-placement="right" container="body" class="fa fa-cog pointer"></i>
             <br>
           </span>
-          <span ng-show="rowSpan(row) == 12 && row.editable">
+          <span ng-show="rowSpan(row) == 12 && row.editable" data-ng-hide="readonly">
             <i bs-tooltip="'Row full. Create a new row to add more panels'" container="body" data-placement="right" class="fa fa-trello"></i>
             <br>
           </span>
-          <span ng-show="rowSpan(row) > 12">
+          <span ng-show="rowSpan(row) > 12" data-ng-hide="readonly">
             <i bs-tooltip="'Total span > 12. This row may format poorly'" data-placement="right" class="fa fa-warning-sign text-warning"></i>
             <br>
           </span>
