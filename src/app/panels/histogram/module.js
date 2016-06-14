@@ -457,7 +457,7 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
               }
             }
 
-            if ($scope.panel.mode !== 'values') {
+            if ($scope.panel.mode !== 'values' && $scope.panel.mode !== 'multivalues') {
               $scope.data[i] = {
                 info: querySrv.list[id],
                 time_series: time_series,
