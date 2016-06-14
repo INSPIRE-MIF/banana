@@ -328,11 +328,16 @@ function (angular, $, _, appLevelRequire) {
             $rootScope.noHeader = $location.search().noHeader !== undefined;
             $rootScope.readonly = $location.search().readonly !== undefined ||
                                   userService.getUser() === null;
+            $rootScope.setAsReadOnly = function () {
+              $rootScope.readonly = !$rootScope.readonly;
+            }
 
+            $rootScope.authenticated = false;
             // Update readonly status based on authentication status
             userService.getCurrentUserInfo().then(function(data) {
               $rootScope.readonly = $location.search().readonly !== undefined ||
                                     data.authenticated === false;
+              $rootScope.authenticated = data.authenticated === true;
             });
 
             $rootScope.requireContext = appLevelRequire;
