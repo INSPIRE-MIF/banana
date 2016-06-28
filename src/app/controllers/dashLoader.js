@@ -206,6 +206,8 @@ function (angular, _) {
         $scope.translationFiles = $scope.translationFiles.concat(r.data);
       });
     };
+    $scope.translationMode = 'form';
+    $scope.termToAdd = '';
     $scope.$watch('dashboard.current.translation', function (n, o) {
       if (n && n !==o) {
         $scope.setTranslation();
@@ -218,8 +220,8 @@ function (angular, _) {
         lang_en: {}
       }
     };
-    $scope.saveTranslation = function () {
-      dashboard.save_translations($scope.translation).then(function () {
+    $scope.saveTranslation = function (translation) {
+      dashboard.save_translations(translation).then(function () {
         $scope.load_translations();
       });
     };
