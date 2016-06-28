@@ -228,9 +228,8 @@
           <div class="form-group">
             <select class="form-control"
                     placeholder="{{'defineTranslation' | translate}}"
-                    ng-model="dashboard.current.translation"
-                    ng-change="setTranslation()"
-                    ng-options="f.id as f.id for f in translationFiles"></select>
+                    ng-model="translation"
+                    ng-options="f as f.id for f in translationFiles track by f.id"></select>
 
             <button class="btn btn-default"
                     ng-click="removeTranslation(dashboard.current.translation)"
@@ -248,7 +247,7 @@
         </form>
       </div>
     </div>
-    <div class="row" ng-show="translation">
+    <div class="row" ng-show="translation && translation.id != '- none -'">
       <div class="col-sm-12 col-md-12">
         <form class="form">
           <div class="form-group">
@@ -278,12 +277,12 @@
                 </label>
                 <div class="input-group">
                   <input type="text" class="form-control" ng-model="languageToAdd">
-              <span class="input-group-btn">
-                <button class="btn btn-default"
-                        ng-click="addLanguage(languageToAdd); languageToAdd = ''">
-                  <i class="fa fa-plus"/>
-                </button>
-              </span>
+                  <span class="input-group-btn">
+                    <button class="btn btn-default"
+                            ng-click="addLanguage(languageToAdd); languageToAdd = ''">
+                      <i class="fa fa-plus"/>
+                    </button>
+                  </span>
                 </div>
               </div>
             </div>

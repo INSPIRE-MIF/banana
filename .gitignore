@@ -3,6 +3,7 @@
 *.iml
 src/app/dashboards/CATALOG-Search.json
 src/app/dashboards/*.json
+src/app/app.js
 src/config.js
 node_modules
 src/bower_components
