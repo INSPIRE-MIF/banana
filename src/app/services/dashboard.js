@@ -272,8 +272,12 @@ function (angular, $, kbn, _, config, moment, Modernizr) {
     this.load_translations = function(id) {
       return $http({
         url: config.solr + config.banana_index +
-             '/select?wt=json&q=+type:translation +id:"' + (id || '*') + '"',
+             '/select',
         method: "GET",
+        params: {
+          wt: 'json',
+          q: '+type:translation ' + (id ? '+id:"' + id + '"' : '')
+        },
         transformResponse: function(response) {
           response = angular.fromJson(response);
           var docs = response.response.docs;

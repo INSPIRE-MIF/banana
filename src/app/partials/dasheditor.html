@@ -228,9 +228,8 @@
           <div class="form-group">
             <select class="form-control"
                     placeholder="{{'defineTranslation' | translate}}"
-                    ng-model="dashboard.current.translation"
-                    ng-change="setTranslation()"
-                    ng-options="f.id as f.id for f in translationFiles"></select>
+                    ng-model="translation"
+                    ng-options="f as f.id for f in translationFiles track by f.id"></select>
 
             <button class="btn btn-default"
                     ng-click="removeTranslation(dashboard.current.translation)"
@@ -248,7 +247,7 @@
         </form>
       </div>
     </div>
-    <div class="row" ng-show="translation">
+    <div class="row" ng-show="translation && translation.id != '- none -'">
       <div class="col-sm-12 col-md-12">
         <form class="form">
           <div class="form-group">
@@ -263,27 +262,47 @@
                    id="title">
           </div>
 
-          <div class="form-group">
-            <label>
-              <span translate="">languagesAvailable</span>{{translation.languages.join(', ')}}
-            </label>
-          </div>
-          <div class="form-group">
-            <label>
-              <span translate="">addAnotherLanguage</span>
-            </label>
-            <div class="input-group">
-              <input type="text" class="form-control" ng-model="languageToAdd">
-              <span class="input-group-btn">
-                <button class="btn btn-default"
-                      ng-click="addLanguage(languageToAdd); languageToAdd = ''">
-                  <i class="fa fa-plus"/>
-                </button>
-              </span>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>
+                  <span translate="">languagesAvailable</span>{{translation.languages.join(', ')}}
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>
+                  <span translate="">addAnotherLanguage</span>
+                </label>
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="languageToAdd">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default"
+                            ng-click="addLanguage(languageToAdd); languageToAdd = ''">
+                      <i class="fa fa-plus"/>
+                    </button>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="radio">
+            <label class="radio-inline">
+              <input type="radio" name="translationMode" ng-model="translationMode" value="form" checked>
+              <span translate="">form</span>
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="translationMode" ng-model="translationMode" value="json">
+              <span translate="">textarea</span>
+            </label>
+          </div>
+
+          <div class="form-group" ng-hide="translationMode === 'form'">
+            <textarea json-text ng-model="translation" rows="15" style="width: 100%"></textarea>
+          </div>
+          <div class="form-group" ng-show="translationMode === 'form'">
             <label for="title"
                    translate="">terms</label>
             <table class="table table-striped">
@@ -333,6 +352,7 @@
                              ng-model="termToAdd">
                         <span class="input-group-btn">
                           <button class="btn btn-default"
+                                  ng-disabled="termToAdd === ''"
                                   ng-click="addTerm(termToAdd); termToAdd = ''">
                             <i class="fa fa-plus"/>
                           </button>
@@ -352,9 +372,9 @@
           </div>
 
           <button class="btn btn-default"
-                  ng-click="saveTranslation()">
+                  ng-click="saveTranslation(translation)">
             <i class="fa fa-save"/>
-            <span translate="">save</span>
+            <span translate="">saveTranslation</span>
           </button>
         </form>
       </div>

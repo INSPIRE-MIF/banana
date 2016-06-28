@@ -60,7 +60,7 @@ define([
         isCountDisplayed: false,
         spyable: true,
         show_queries: true,
-        error: '',
+        error: ''
       };
       _.defaults($scope.panel, _d);
 

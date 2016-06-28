@@ -186,18 +186,6 @@ function (angular, _) {
     // Dashboard translations
     var NULL_TRANSLATION = '- none -';
     $scope.searchTerm = '';
-    $scope.setTranslation = function () {
-      if (dashboard.current.translation === NULL_TRANSLATION) {
-        $scope.translation = null;
-      } else {
-        for (var i = 0; i < $scope.translationFiles.length; i ++) {
-          if ($scope.translationFiles[i].id === dashboard.current.translation) {
-            $scope.translation = $scope.translationFiles[i];
-            break;
-          }
-        }
-      }
-    };
     $scope.load_translations = function() {
       dashboard.load_translations().then(function (r) {
         $scope.translationFiles = [{
@@ -206,11 +194,28 @@ function (angular, _) {
         $scope.translationFiles = $scope.translationFiles.concat(r.data);
       });
     };
-    $scope.$watch('dashboard.current.translation', function (n, o) {
-      if (n && n !==o) {
-        $scope.setTranslation();
+    $scope.$watch('translation', function (n, o) {
+      if (n && n !== o && angular.isDefined($scope.dashboard.current.translation)) {
+        $scope.dashboard.current.translation = n.id;
+      } else {
+        $scope.dashboard.current.translation = null;
       }
     });
+    $scope.$watch('dashboard.current.translation', function (n, o) {
+      if (n && n !== o && $scope.translationFiles) {
+        angular.forEach($scope.translationFiles, function (t) {
+          if (t.id ===  $scope.dashboard.current.translation) {
+            $scope.translation = t;
+          }
+        });
+
+        if ($scope.translation == null) {
+          $scope.translation = null;
+        }
+      }
+    });
+    $scope.translationMode = 'form';
+    $scope.termToAdd = '';
     $scope.createTranslation = function() {
       $scope.translation = {
         id: 'i18n_default',
@@ -218,8 +223,8 @@ function (angular, _) {
         lang_en: {}
       }
     };
-    $scope.saveTranslation = function () {
-      dashboard.save_translations($scope.translation).then(function () {
+    $scope.saveTranslation = function (translation) {
+      dashboard.save_translations(translation).then(function () {
         $scope.load_translations();
       });
     };
