@@ -183,13 +183,13 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${project.build.directory}/web/dashboard2
+              <outputDirectory>${project.build.directory}/web/dashboard
               </outputDirectory>
               <overwrite>true</overwrite>
               <resources>
                 <resource>
                   <directory>${project.basedir}/src</directory>
-                  <targetPath>${project.build.directory}/web/dashboard2
+                  <targetPath>${project.build.directory}/web/dashboard
                   </targetPath>
                 </resource>
               </resources>
