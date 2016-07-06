@@ -3,11 +3,18 @@
       <label class="small">Mode</label>
       <!-- Banana: does not support 'min','mean','max', and 'total' modes yet -->
       <!-- <select ng-change="set_refresh(true)" class="form-control" ng-model="panel.mode" ng-options="f for f in ['count','min','mean','max','total','value']"></select> -->
-      <select ng-change="set_refresh(true)" class="form-control" ng-model="panel.mode" ng-options="f for f in ['count','values', 'multivalues']"></select>
+      <select ng-change="set_refresh(true)" class="form-control"
+              ng-model="panel.mode"
+              ng-options="f for f in ['count','values', 'multivalues']"></select>
     </div>
     <div class="col-sm-2 col-md-2" ng-if="panel.mode != 'count'">
       <label class="small">Value Field</label>
         <input ng-change="set_refresh(true)" placeholder="Start typing" bs-typeahead ng-options="field for field in fields.list" type="text" class="form-control" ng-model="panel.value_field">
+      <select ng-change="set_refresh(true)"
+              class="form-control"
+              ng-if="panel.mode == 'multivalues'"
+              ng-model="panel.multivalueMode"
+              ng-options="f for f in multivalueModes"></select>
     </div>
     <div class="col-sm-2 col-md-2" ng-show="panel.mode != 'count'">
       <label class="small">Max Rows <tip>Maximum number of rows to retrieve for the result set.</tip></label>
