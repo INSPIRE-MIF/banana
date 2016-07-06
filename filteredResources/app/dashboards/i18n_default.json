@@ -77,7 +77,12 @@
     "stereoModel": "Stereo model",
     "video": "Video",
     "discovery": "Discovery",
-    "other": "Other"
+    "other": "Other",
+    "nsv_numdiscserv": "Discovery",
+    "nsv_numinvkserv": "Invoke",
+    "nsv_numtransfserv": "Transformation",
+    "nsv_numviewserv": "View",
+    "nsv_numdownlserv": "Download"
   },
   "lang_fr": {
     "ii": "Annexe II",
@@ -148,10 +153,15 @@
     "stereoModel": "Stereo model",
     "video": "Vidéo",
     "discovery": "Découverte",
-    "other": "Autre"
+    "other": "Autre",
+    "nsv_numdiscserv": "Découverte",
+    "nsv_numinvkserv": "Invoke",
+    "nsv_numtransfserv": "Transformation",
+    "nsv_numviewserv": "Visualisation",
+    "nsv_numdownlserv": "Téléchargement"
   },
   "lang_nl": {
     "discovery": "discovery",
     "other": "other"
-  },
+  }
 }

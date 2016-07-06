@@ -1,5 +1,5 @@
 {
-  "title": "INSPIRE Member States dashboard",
+  "title": "INSPIRE EU dashboard",
   "services": {
     "query": {
       "idQueue": [],
@@ -23,8 +23,8 @@
       ],
       "list": {
         "0": {
-          "from": "2010-07-06T06:38:42.000Z",
-          "to": "2016-07-06T06:38:42.000Z",
+          "from": "2010-07-06T08:02:34.000Z",
+          "to": "2016-07-06T08:02:34.000Z",
           "field": "reportingDate",
           "type": "time",
           "mandate": "must",
@@ -40,43 +40,6 @@
   },
   "rows": [
     {
-      "title": "Choose a member state",
-      "height": "70px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "span": 12,
-          "editable": true,
-          "type": "tagcloud",
-          "loadingEditor": false,
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.sort=index&facet.field=territory&facet.limit=35",
-            "custom": ""
-          },
-          "field": "territory",
-          "exclude": [],
-          "size": 35,
-          "alignment": "horizontal",
-          "fontScale": 20,
-          "isSizeAdjusted": false,
-          "isCountDisplayed": false,
-          "spyable": false,
-          "show_queries": true,
-          "title": "",
-          "mode": "toggle",
-          "sort": "index",
-          "toggleMode": "pills",
-          "toggleLayout": "buttons"
-        }
-      ]
-    },
-    {
       "title": "Metadata existence",
       "height": "50px",
       "editable": true,
@@ -85,20 +48,20 @@
       "panels": [
         {
           "error": false,
-          "span": 6,
+          "span": 12,
           "editable": true,
           "type": "text",
           "loadingEditor": false,
           "status": "Stable",
           "mode": "markdown",
-          "content": "# Data sets and services availability",
+          "content": "# Data sets and services availability for all Member States",
           "style": {}
         }
       ]
     },
     {
       "title": "Metadata existence",
-      "height": "400px",
+      "height": "600px",
       "editable": true,
       "collapse": false,
       "collapsable": true,
@@ -108,14 +71,14 @@
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
-          "mode": "values",
+          "mode": "multivalues",
           "time_field": "reportingDate",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"facet\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}\n",
             "custom": "&fq=indicatorName:dsv_num"
           },
           "max_rows": 100000,
@@ -144,15 +107,15 @@
           "timezone": "browser",
           "spyable": true,
           "zoomlinks": false,
-          "bars": false,
+          "bars": true,
           "stack": true,
-          "points": true,
-          "lines": true,
-          "legend": true,
+          "points": false,
+          "lines": false,
+          "legend": false,
           "x-axis": true,
           "y-axis": true,
           "percentage": false,
-          "interactive": true,
+          "interactive": false,
           "options": false,
           "tooltip": {
             "value_type": "cumulative",
@@ -163,20 +126,21 @@
           "show_queries": false,
           "logAxis": false,
           "sortBy": "index",
-          "order": "ascending"
+          "order": "ascending",
+          "multivalueMode": "sum"
         },
         {
           "span": 6,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
-          "mode": "values",
+          "mode": "multivalues",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(MDv11 or MDv12 or MDv13)"
           },
           "max_rows": 100000,
@@ -224,13 +188,14 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Number of spatial data sets per annexes"
+          "title": "Number of spatial data sets per annexes",
+          "multivalueMode": "sum"
         }
       ]
     },
     {
       "title": "Metadata existence (2)",
-      "height": "450px",
+      "height": "600px",
       "editable": true,
       "collapse": false,
       "collapsable": true,
@@ -240,19 +205,19 @@
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
-          "mode": "values",
+          "mode": "multivalues",
           "time_field": "reportingDate",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=indicatorName:(MDv14 or SDSv_Num)"
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"facet\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}\n",
+            "custom": "&fq=indicatorName:(SDSv_Num)"
           },
           "max_rows": 100000,
           "value_field": "indicatorValue",
-          "group_field": "indicatorName",
+          "group_field": "",
           "auto_int": false,
           "resolution": 100,
           "interval": "1y",
@@ -276,11 +241,11 @@
           "timezone": "browser",
           "spyable": true,
           "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
-          "legend": true,
+          "bars": true,
+          "stack": true,
+          "points": false,
+          "lines": false,
+          "legend": false,
           "x-axis": true,
           "y-axis": true,
           "percentage": false,
@@ -290,25 +255,26 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Number of spatial data services (SDSv_Num) and with metadata (MDv14)",
+          "title": "Number of spatial data services (SDSv_Num)",
           "lines_smooth": true,
           "show_queries": true,
           "logAxis": false,
           "sortBy": "index",
-          "order": "ascending"
+          "order": "ascending",
+          "multivalueMode": "sum"
         },
         {
           "span": 6,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
-          "mode": "values",
+          "mode": "multivalues",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(NSv_NumViewServ or NSv_NumDiscServ or NSv_NumDownlServ or NSv_NumInvkServ or NSv_NumTransfServ)"
           },
           "max_rows": 100000,
@@ -356,19 +322,20 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Spatial data services by service types"
+          "title": "Number of spatial data services by service types",
+          "multivalueMode": "sum"
         }
       ]
     },
     {
       "title": "Accessibility",
-      "height": "400px",
+      "height": "600px",
       "editable": true,
       "collapse": false,
       "collapsable": true,
       "panels": [
         {
-          "span": 6,
+          "span": 4,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
@@ -378,14 +345,14 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"min(indicatorValue)\"}}}}}\n",
-            "custom": "&fq=(indicatorName:NSi21 OR  indicatorName:NSi22 OR indicatorName:NSi2)"
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"facet\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}\n",
+            "custom": "&fq=indicatorName:nsv21"
           },
           "max_rows": 1000,
           "value_field": "indicatorValue",
-          "group_field": "indicatorName",
-          "sortBy": "count",
-          "order": "descending",
+          "group_field": "",
+          "sortBy": "index",
+          "order": "ascending",
           "auto_int": false,
           "resolution": 100,
           "interval": "1y",
@@ -409,32 +376,33 @@
           "timezone": "browser",
           "spyable": true,
           "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
+          "bars": true,
+          "stack": true,
+          "points": false,
+          "lines": false,
           "lines_smooth": true,
-          "legend": true,
+          "legend": false,
           "x-axis": true,
           "y-axis": true,
           "logAxis": false,
           "percentage": false,
-          "interactive": true,
+          "interactive": false,
           "options": false,
           "show_queries": false,
           "tooltip": {
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "%age of spatial data sets for which a view service (NSi21), a download service (NSi22) or a view and download (NSi2) exist",
+          "title": "Number of spatial data sets for which a view service exists",
           "show_help_message": false,
           "info_mode": "html",
           "help_message": "",
-          "max_value": 1,
-          "min_value": 0
+          "max_value": 30000,
+          "min_value": 0,
+          "multivalueMode": "sum"
         },
         {
-          "span": 6,
+          "span": 4,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
@@ -445,12 +413,12 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"min(indicatorValue)\"}}}}}\n",
-            "custom": "&fq=(indicatorName:NSv21 OR indicatorName:NSv22 OR indicatorName:NSv23 OR indicatorName:MDv1_DS)"
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"facet\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}\n",
+            "custom": "&fq=indicatorName:NSv22"
           },
           "max_rows": 1000,
           "value_field": "indicatorValue",
-          "group_field": "indicatorName",
+          "group_field": "",
           "auto_int": false,
           "resolution": 100,
           "interval": "1y",
@@ -474,203 +442,50 @@
           "timezone": "browser",
           "spyable": true,
           "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
-          "legend": true,
+          "bars": true,
+          "stack": true,
+          "points": false,
+          "lines": false,
+          "legend": false,
           "x-axis": true,
           "y-axis": true,
           "percentage": false,
-          "interactive": true,
+          "interactive": false,
           "options": false,
           "tooltip": {
             "value_type": "cumulative",
             "query_as_alias": true
           },
-          "title": "Number of spatial data sets for which a view (NSv21) or download (NSv22) or both (NSv23) service exist and the total number of metadata (MDv1_ds)",
+          "title": "Number of spatial data sets for which a download service exists",
           "lines_smooth": true,
           "show_queries": false,
-          "logAxis": true,
+          "logAxis": false,
           "sortBy": "index",
           "order": "ascending",
           "min_value": 0,
           "show_help_message": false,
           "info_mode": "text",
-          "help_message": ""
-        }
-      ]
-    },
-    {
-      "title": "Conformity",
-      "height": "50px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "error": false,
-          "span": 6,
-          "editable": true,
-          "type": "text",
-          "loadingEditor": false,
-          "status": "Stable",
-          "mode": "markdown",
-          "content": "# Metadata conformity",
-          "style": {}
-        }
-      ]
-    },
-    {
-      "title": "Metadata conformity",
-      "height": "400px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "span": 4,
-          "editable": true,
-          "type": "histogram",
-          "loadingEditor": false,
-          "mode": "values",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=indicatorName:MDi2"
-          },
-          "max_rows": 100000,
-          "value_field": "indicatorValue",
-          "group_field": "indicatorName",
-          "sortBy": "count",
-          "order": "descending",
-          "auto_int": false,
-          "resolution": 100,
-          "interval": "1y",
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1M",
-            "1y"
-          ],
-          "fill": 0,
-          "linewidth": 1,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
-          "lines_smooth": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "logAxis": false,
-          "percentage": false,
-          "interactive": true,
-          "options": false,
-          "show_queries": true,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": true
-          },
-          "title": "%age of spatial data sets and services with conformant metadata (MDi2)",
-          "max_value": 1,
-          "min_value": 0
+          "help_message": "",
+          "multivalueMode": "sum",
+          "max_value": 30000
         },
         {
           "span": 4,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
-          "mode": "values",
-          "time_field": "reportingDate",
+          "mode": "multivalues",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=indicatorName:(MDv2_DS OR MDv1_DS)"
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"facet\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}\n",
+            "custom": "&fq=indicatorName:NSv23"
           },
           "max_rows": 100000,
           "value_field": "indicatorValue",
-          "group_field": "indicatorName",
-          "auto_int": false,
-          "resolution": 100,
-          "interval": "1y",
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1M",
-            "1y"
-          ],
-          "fill": 0,
-          "linewidth": 1,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "options": false,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": false
-          },
-          "title": "Number of spatial data set that have metadata (MDv1_DS) and have conformant metadata (MDv2_DS)",
-          "lines_smooth": true,
-          "show_queries": true,
-          "logAxis": false,
-          "sortBy": "index",
-          "order": "ascending",
-          "min_value": 0
-        },
-        {
-          "span": 4,
-          "editable": true,
-          "type": "histogram",
-          "loadingEditor": false,
-          "mode": "values",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=indicatorName:(MDv24 OR MDv14)"
-          },
-          "max_rows": 100000,
-          "value_field": "indicatorValue",
-          "group_field": "indicatorName",
+          "group_field": "",
           "sortBy": "index",
           "order": "ascending",
           "auto_int": false,
@@ -696,10 +511,103 @@
           "timezone": "browser",
           "spyable": true,
           "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
+          "bars": true,
+          "stack": true,
+          "points": false,
+          "lines": false,
+          "lines_smooth": false,
+          "legend": false,
+          "x-axis": true,
+          "y-axis": true,
+          "logAxis": false,
+          "percentage": false,
+          "interactive": false,
+          "options": false,
+          "show_queries": true,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": false
+          },
+          "title": "Number of spatial data sets for which a view and download service exists",
+          "multivalueMode": "sum",
+          "max_value": 30000
+        }
+      ]
+    },
+    {
+      "title": "Metadata conformity",
+      "height": "50px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "type": "text",
+          "loadingEditor": false,
+          "status": "Stable",
+          "mode": "markdown",
+          "content": "# Metadata conformity",
+          "style": {}
+        }
+      ]
+    },
+    {
+      "title": "Metadata conformity (2)",
+      "height": "450px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 6,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "multivalues",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "custom": "&fq=indicatorName:(MDv21 or MDv22 or MDv23)"
+          },
+          "max_rows": 100000,
+          "value_field": "indicatorValue",
+          "multivalueMode": "sum",
+          "group_field": "indicatorName",
+          "sortBy": "count",
+          "order": "descending",
+          "auto_int": false,
+          "resolution": 100,
+          "interval": "1y",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1M",
+            "1y"
+          ],
+          "fill": 0,
+          "linewidth": 3,
+          "timezone": "browser",
+          "spyable": true,
+          "zoomlinks": false,
+          "bars": true,
+          "stack": true,
+          "points": false,
+          "lines": false,
           "lines_smooth": false,
           "legend": true,
           "x-axis": true,
@@ -713,12 +621,74 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Number of service that have metadata (MDV14) and have conformant metadata (MDV24)"
+          "title": "Number of spatial data sets that have conformant metadata"
+        },
+        {
+          "span": 6,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "multivalues",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"facet\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}\n",
+            "custom": "&fq=indicatorName:MDv24"
+          },
+          "max_rows": 100000,
+          "value_field": "indicatorValue",
+          "multivalueMode": "sum",
+          "group_field": "",
+          "sortBy": "count",
+          "order": "descending",
+          "auto_int": false,
+          "resolution": 100,
+          "interval": "1y",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1M",
+            "1y"
+          ],
+          "fill": 0,
+          "linewidth": 3,
+          "timezone": "browser",
+          "spyable": true,
+          "zoomlinks": false,
+          "bars": true,
+          "stack": true,
+          "points": false,
+          "lines": false,
+          "lines_smooth": false,
+          "legend": false,
+          "x-axis": true,
+          "y-axis": true,
+          "logAxis": false,
+          "percentage": false,
+          "interactive": false,
+          "options": false,
+          "show_queries": true,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": false
+          },
+          "title": "Number of spatial data services that have conformant metadata"
         }
       ]
     },
     {
-      "title": "SDS and DS conformity",
+      "title": "DS & SDS conformity",
       "height": "50px",
       "editable": true,
       "collapse": false,
@@ -733,13 +703,12 @@
           "status": "Stable",
           "mode": "markdown",
           "content": "# Spatial data sets and services conformity",
-          "style": {},
-          "title": ""
+          "style": {}
         }
       ]
     },
     {
-      "title": "Dataset conformity per annexes",
+      "title": "DS & SDS conformity (2)",
       "height": "450px",
       "editable": true,
       "collapse": false,
@@ -750,17 +719,18 @@
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
-          "mode": "values",
+          "mode": "multivalues",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(DSv21 or DSv22 or DSv23)"
           },
           "max_rows": 100000,
           "value_field": "indicatorValue",
+          "multivalueMode": "sum",
           "group_field": "indicatorName",
           "sortBy": "index",
           "order": "ascending",
@@ -804,99 +774,28 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Number of conformant spatial data sets per Annexes"
-        }
-      ]
-    },
-    {
-      "title": "Service conformity",
-      "height": "400px",
-      "editable": true,
-      "collapse": false,
-      "collapsable": true,
-      "panels": [
-        {
-          "span": 6,
-          "editable": true,
-          "type": "histogram",
-          "loadingEditor": false,
-          "mode": "values",
-          "time_field": "reportingDate",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=(indicatorName:NSv41 OR indicatorName:NSv42 OR indicatorName:NSv43 OR indicatorName:NSv44 OR indicatorName:NSv4)"
-          },
-          "max_rows": 100000,
-          "value_field": "indicatorValue",
-          "group_field": "indicatorName",
-          "auto_int": false,
-          "resolution": 100,
-          "interval": "1y",
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1M",
-            "1y"
-          ],
-          "fill": 0,
-          "linewidth": 1,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "options": false,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": false
-          },
-          "title": "Number of all conformant network services: discovery (NSv41), view (NSv42), download (NSv43), transformation (NSv44) total (NSv4)",
-          "lines_smooth": true,
-          "show_queries": false,
-          "logAxis": false,
-          "sortBy": "index",
-          "order": "ascending",
-          "min_value": null
+          "title": "Number of conformant spatial data sets per annexes"
         },
         {
           "span": 6,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
-          "mode": "values",
+          "mode": "multivalues",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=(indicatorName:NSi41 OR indicatorName:NSi42 OR indicatorName:NSi43 OR indicatorName:NSi44 OR indicatorName:NSi4)"
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T08:02:34.000Z%20TO%202016-07-06T08:02:34.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T08:02:34.000Z&facet.range.end=2016-07-06T08:02:34.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "custom": "&fq=indicatorName:(NSv41 or NSv42 or NSv43 or NSv44 or NSv45)"
           },
           "max_rows": 100000,
           "value_field": "indicatorValue",
+          "multivalueMode": "sum",
           "group_field": "indicatorName",
-          "sortBy": "count",
-          "order": "descending",
+          "sortBy": "index",
+          "order": "ascending",
           "auto_int": false,
           "resolution": 100,
           "interval": "1y",
@@ -916,30 +815,28 @@
             "1y"
           ],
           "fill": 0,
-          "linewidth": 1,
+          "linewidth": 3,
           "timezone": "browser",
           "spyable": true,
           "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
-          "lines_smooth": true,
+          "bars": true,
+          "stack": true,
+          "points": false,
+          "lines": false,
+          "lines_smooth": false,
           "legend": true,
           "x-axis": true,
           "y-axis": true,
           "logAxis": false,
-          "percentage": true,
-          "interactive": true,
+          "percentage": false,
+          "interactive": false,
           "options": false,
-          "show_queries": false,
+          "show_queries": true,
           "tooltip": {
             "value_type": "cumulative",
-            "query_as_alias": true
+            "query_as_alias": false
           },
-          "title": "%age of all conformant network services: discovery (NSi41), view (NSi42), download (NSi43), transformation (NSi44) total (NSi4)",
-          "max_value": 1,
-          "min_value": 0
+          "title": "Number of conformant services by service type"
         }
       ]
     },
@@ -957,7 +854,7 @@
           "type": "timepicker",
           "loadingEditor": false,
           "status": "Stable",
-          "mode": "absolute",
+          "mode": "relative",
           "time_options": [
             "1y",
             "2y",
@@ -976,11 +873,7 @@
           },
           "filter_id": 0,
           "spyable": true,
-          "title": "",
-          "time": {
-            "from": "07/06/2010 08:38:42",
-            "to": "07/06/2016 08:38:42"
-          }
+          "title": ""
         },
         {
           "error": false,
@@ -989,200 +882,6 @@
           "type": "filtering",
           "loadingEditor": false,
           "spyable": true
-        }
-      ]
-    },
-    {
-      "title": "Hits number",
-      "height": "400px",
-      "editable": true,
-      "collapse": true,
-      "collapsable": true,
-      "panels": [
-        {
-          "span": 4,
-          "editable": true,
-          "type": "histogram",
-          "loadingEditor": false,
-          "mode": "values",
-          "time_field": "reportingDate",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=indicatorName:NSv31"
-          },
-          "max_rows": 100000,
-          "value_field": "indicatorValue",
-          "group_field": "indicatorName",
-          "auto_int": false,
-          "resolution": 100,
-          "interval": "1y",
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1M",
-            "1y"
-          ],
-          "fill": 0,
-          "linewidth": 1,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": false,
-          "bars": false,
-          "stack": true,
-          "points": true,
-          "lines": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "options": false,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": false
-          },
-          "title": "Sum of the annual number of network service request for all the discovery services (NSv31)",
-          "lines_smooth": true,
-          "show_queries": false,
-          "logAxis": false,
-          "sortBy": "index",
-          "order": "ascending"
-        },
-        {
-          "span": 4,
-          "editable": true,
-          "type": "histogram",
-          "loadingEditor": false,
-          "mode": "values",
-          "time_field": "reportingDate",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=indicatorName:NSv32"
-          },
-          "max_rows": 100000,
-          "value_field": "indicatorValue",
-          "group_field": "indicatorName",
-          "auto_int": false,
-          "resolution": 100,
-          "interval": "1y",
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1M",
-            "1y"
-          ],
-          "fill": 0,
-          "linewidth": 1,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": false,
-          "bars": false,
-          "stack": true,
-          "points": true,
-          "lines": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "percentage": false,
-          "interactive": true,
-          "options": false,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": false
-          },
-          "title": "Sum of the annual number of network service request for all the view services (NSv32)",
-          "lines_smooth": true,
-          "show_queries": true,
-          "logAxis": false,
-          "sortBy": "index",
-          "order": "ascending"
-        },
-        {
-          "span": 4,
-          "editable": true,
-          "type": "histogram",
-          "loadingEditor": false,
-          "mode": "values",
-          "queries": {
-            "mode": "all",
-            "ids": [
-              0
-            ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=indicatorName:NSv33"
-          },
-          "max_rows": 100000,
-          "value_field": "indicatorValue",
-          "group_field": "indicatorName",
-          "sortBy": "count",
-          "order": "descending",
-          "auto_int": false,
-          "resolution": 100,
-          "interval": "1y",
-          "intervals": [
-            "auto",
-            "1s",
-            "1m",
-            "5m",
-            "10m",
-            "30m",
-            "1h",
-            "3h",
-            "12h",
-            "1d",
-            "1w",
-            "1M",
-            "1y"
-          ],
-          "fill": 0,
-          "linewidth": 1,
-          "timezone": "browser",
-          "spyable": true,
-          "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
-          "lines_smooth": true,
-          "legend": true,
-          "x-axis": true,
-          "y-axis": true,
-          "logAxis": false,
-          "percentage": false,
-          "interactive": true,
-          "options": false,
-          "show_queries": true,
-          "tooltip": {
-            "value_type": "cumulative",
-            "query_as_alias": false
-          },
-          "title": "Sum of the annual number of network service request for all the download services (NSv33)"
         }
       ]
     }
