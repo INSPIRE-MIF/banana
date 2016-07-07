@@ -1,5 +1,5 @@
 {
-  "title": "INSPIRE Member States dashboard",
+  "title": "INSPIRE Member State dashboard",
   "services": {
     "query": {
       "idQueue": [],
@@ -163,7 +163,8 @@
           "show_queries": false,
           "logAxis": false,
           "sortBy": "index",
-          "order": "ascending"
+          "order": "ascending",
+          "multivalueMode": "sum"
         },
         {
           "span": 6,
@@ -224,7 +225,8 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Number of spatial data sets per annexes"
+          "title": "Number of spatial data sets per annexes",
+          "multivalueMode": "sum"
         }
       ]
     },
@@ -295,7 +297,8 @@
           "show_queries": true,
           "logAxis": false,
           "sortBy": "index",
-          "order": "ascending"
+          "order": "ascending",
+          "multivalueMode": "sum"
         },
         {
           "span": 6,
@@ -356,7 +359,8 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Spatial data services by service types"
+          "title": "Spatial data services by service types",
+          "multivalueMode": "sum"
         }
       ]
     },
@@ -378,7 +382,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"min(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=(indicatorName:NSi21 OR  indicatorName:NSi22 OR indicatorName:NSi2)"
           },
           "max_rows": 1000,
@@ -431,7 +435,8 @@
           "info_mode": "html",
           "help_message": "",
           "max_value": 1,
-          "min_value": 0
+          "min_value": 0,
+          "multivalueMode": "sum"
         },
         {
           "span": 6,
@@ -445,7 +450,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"min(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=(indicatorName:NSv21 OR indicatorName:NSv22 OR indicatorName:NSv23 OR indicatorName:MDv1_DS)"
           },
           "max_rows": 1000,
@@ -497,7 +502,8 @@
           "min_value": 0,
           "show_help_message": false,
           "info_mode": "text",
-          "help_message": ""
+          "help_message": "",
+          "multivalueMode": "sum"
         }
       ]
     },
@@ -529,7 +535,7 @@
       "collapsable": true,
       "panels": [
         {
-          "span": 4,
+          "span": 6,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
@@ -589,10 +595,82 @@
           },
           "title": "%age of spatial data sets and services with conformant metadata (MDi2)",
           "max_value": 1,
-          "min_value": 0
+          "min_value": 0,
+          "multivalueMode": "sum"
         },
         {
-          "span": 4,
+          "span": 6,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "values",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "custom": "&fq=indicatorName:(MDv24 OR MDv14)"
+          },
+          "max_rows": 100000,
+          "value_field": "indicatorValue",
+          "group_field": "indicatorName",
+          "sortBy": "index",
+          "order": "ascending",
+          "auto_int": false,
+          "resolution": 100,
+          "interval": "1y",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1M",
+            "1y"
+          ],
+          "fill": 0,
+          "linewidth": 3,
+          "timezone": "browser",
+          "spyable": true,
+          "zoomlinks": false,
+          "bars": false,
+          "stack": false,
+          "points": true,
+          "lines": true,
+          "lines_smooth": false,
+          "legend": true,
+          "x-axis": true,
+          "y-axis": true,
+          "logAxis": false,
+          "percentage": false,
+          "interactive": false,
+          "options": false,
+          "show_queries": true,
+          "tooltip": {
+            "value_type": "cumulative",
+            "query_as_alias": false
+          },
+          "title": "Number of service that have metadata (MDV14) and have conformant metadata (MDV24)",
+          "multivalueMode": "sum"
+        }
+      ]
+    },
+    {
+      "title": "Metadata conformity (2)",
+      "height": "450px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 6,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
@@ -652,27 +730,29 @@
           "logAxis": false,
           "sortBy": "index",
           "order": "ascending",
-          "min_value": 0
+          "min_value": 0,
+          "multivalueMode": "sum"
         },
         {
-          "span": 4,
+          "span": 6,
           "editable": true,
           "type": "histogram",
           "loadingEditor": false,
-          "mode": "values",
+          "mode": "multivalues",
           "queries": {
             "mode": "all",
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
-            "custom": "&fq=indicatorName:(MDv24 OR MDv14)"
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "custom": "&fq=indicatorName:(MDv21 OR MDv22 OR MDv23)"
           },
           "max_rows": 100000,
           "value_field": "indicatorValue",
+          "multivalueMode": "sum",
           "group_field": "indicatorName",
-          "sortBy": "index",
-          "order": "ascending",
+          "sortBy": "count",
+          "order": "descending",
           "auto_int": false,
           "resolution": 100,
           "interval": "1y",
@@ -696,10 +776,10 @@
           "timezone": "browser",
           "spyable": true,
           "zoomlinks": false,
-          "bars": false,
-          "stack": false,
-          "points": true,
-          "lines": true,
+          "bars": true,
+          "stack": true,
+          "points": false,
+          "lines": false,
           "lines_smooth": false,
           "legend": true,
           "x-axis": true,
@@ -713,7 +793,7 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Number of service that have metadata (MDV14) and have conformant metadata (MDV24)"
+          "title": "Number of spatial data sets that have conformant metadata per annexes"
         }
       ]
     },
@@ -804,7 +884,8 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Number of conformant spatial data sets per Annexes"
+          "title": "Number of conformant spatial data sets per Annexes",
+          "multivalueMode": "sum"
         }
       ]
     },
@@ -876,7 +957,8 @@
           "logAxis": false,
           "sortBy": "index",
           "order": "ascending",
-          "min_value": null
+          "min_value": null,
+          "multivalueMode": "sum"
         },
         {
           "span": 6,
@@ -939,7 +1021,8 @@
           },
           "title": "%age of all conformant network services: discovery (NSi41), view (NSi42), download (NSi43), transformation (NSi44) total (NSi4)",
           "max_value": 1,
-          "min_value": 0
+          "min_value": 0,
+          "multivalueMode": "sum"
         }
       ]
     },
@@ -1059,7 +1142,8 @@
           "show_queries": false,
           "logAxis": false,
           "sortBy": "index",
-          "order": "ascending"
+          "order": "ascending",
+          "multivalueMode": "sum"
         },
         {
           "span": 4,
@@ -1121,7 +1205,8 @@
           "show_queries": true,
           "logAxis": false,
           "sortBy": "index",
-          "order": "ascending"
+          "order": "ascending",
+          "multivalueMode": "sum"
         },
         {
           "span": 4,
@@ -1182,7 +1267,8 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "Sum of the annual number of network service request for all the download services (NSv33)"
+          "title": "Sum of the annual number of network service request for all the download services (NSv33)",
+          "multivalueMode": "sum"
         }
       ]
     }
