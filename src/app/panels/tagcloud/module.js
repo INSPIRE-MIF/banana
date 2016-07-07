@@ -21,7 +21,7 @@ define([
     var module = angular.module('kibana.panels.tagcloud', []);
     app.useModule(module);
 
-    module.controller('tagcloud', function($scope, querySrv, dashboard, filterSrv) {
+    module.controller('tagcloud', function($scope, $location, querySrv, dashboard, filterSrv) {
       $scope.panelMeta = {
         modals: [{
           description: "Inspect",
@@ -71,7 +71,12 @@ define([
         });
         $scope.initialData = null;
         $scope.get_data().then(function (){
-          $scope.setFilter($scope.initialData[0]);
+          var urlFilter = $location.search().tagcloudCurrent;
+          if (angular.isDefined(urlFilter)) {
+            $scope.setFilter({label: urlFilter});
+          } else {
+            $scope.setFilter($scope.initialData[0]);
+          }
         });
       };
 
@@ -234,6 +239,7 @@ define([
             scope.current = d.label;
             dashboard.refresh();
           }
+
           // Function for rendering panel
           function render_panel() {
 

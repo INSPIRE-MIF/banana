@@ -70,6 +70,7 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
       description : "A bucketed time series chart of the current query, including all applied time and non-time filters, when used in <i>count</i> mode. Uses Solr’s facet.range query parameters. In <i>values</i> mode, it plots the value of a specific field over time, and allows the user to group field values by a second field."
     };
 
+    $scope.multivalueModes = ['sum', 'min', 'max', 'avg'];
     // Set and populate defaults
     var _d = {
       mode        : 'count',
@@ -81,6 +82,7 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
       },
       max_rows    : 100000,  // maximum number of rows returned from Solr (also use this for group.limit to simplify UI setting)
       value_field : null,
+      multivalueMode: $scope.multivalueModes[0],
       group_field : null,
       sortBy      : 'count',
       order       : 'descending',
@@ -280,17 +282,26 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
       } else if ($scope.panel.mode === 'multivalues') {
         // Create a JSON facet request by group then value then time
         // This will support multivalue field
-        // TODO: if ($scope.panel.group_field) {
-        // TODO: add function
         // TODO: Add range parameters
-        var jsonFacet =
+        if ($scope.panel.group_field != '') {
+          var jsonFacet =
           {group: {type: 'terms', field: $scope.panel.group_field, limit: $scope.panel.max_rows,
             // facet: {value: {type: 'terms', field: $scope.panel.value_field,
-              facet: {values:  {type: 'terms', field: time_field ,
-                facet: {value: 'min(' + $scope.panel.value_field + ')'}
+            facet: {values:  {type: 'terms', field: time_field ,
+              facet: {value: $scope.panel.multivalueMode +
+              '(' + $scope.panel.value_field + ')'}
             }}
-          // }}
-        }};
+            // }}
+          }};
+        } else {
+          var jsonFacet =
+          {facet: {type: 'terms', field: time_field ,
+              facet: {value: $scope.panel.multivalueMode +
+              '(' + $scope.panel.value_field + ')'}
+            }
+          };
+        }
+
         values_mode_query = "&json.facet=" + angular.toJson(jsonFacet);
       }
 
@@ -367,7 +378,7 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
                 $scope.hits += entry_count; // Entire dataset level hits counter
               }
             } else if ($scope.panel.mode === 'multivalues') {
-              if ($scope.panel.group_field) {
+              if ($scope.panel.group_field != '') {
                 var groups = results[index].facets.group.buckets;
                 for (var j = 0; j < groups.length; j++) { // jshint ignore: line
                   var group_time_series = new timeSeries.ZeroFilled({
@@ -401,7 +412,32 @@ function (angular, app, $, _, kbn, moment, timeSeries) {
                   };
                 }
               } else {
-                // TODO
+                var groups = results[index].facets.facet.buckets;
+                for (var j = 0; j < groups.length; j++) { // jshint ignore: line
+                  var group_time_series = new timeSeries.ZeroFilled({
+                    interval: _interval,
+                    start_date: _range && _range.from,
+                    end_date: _range && _range.to,
+                    fill_style: 'minimal'
+                  });
+                  hits = 0;
+
+                  entry_time = new Date(groups[j].val).getTime(); // convert to millisec
+                  entry_value = groups[j].value;
+                  group_time_series.addValue(entry_time, entry_value);
+                  hits += 1;
+                  $scope.hits += 1;
+
+                  $scope.data[j] = {
+                    info: {
+                      alias: groups[j].val,
+                      color: querySrv.colors[j],
+
+                    },
+                    time_series: group_time_series,
+                    hits: hits
+                  };
+                }
               }
             } else if ($scope.panel.mode === 'values') {
               if ($scope.panel.group_field) {
