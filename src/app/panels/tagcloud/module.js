@@ -75,7 +75,11 @@ define([
           if (angular.isDefined(urlFilter)) {
             $scope.setFilter({label: urlFilter});
           } else {
-            $scope.setFilter($scope.initialData[0]);
+            // Select the first item on the list only
+            // if in toggle mode.
+            if ($scope.panel.mode === 'toggle') {
+              $scope.setFilter($scope.initialData[0]);
+            }
           }
         });
       };
