@@ -301,9 +301,13 @@ define([
              type: 'GEOJSON',
              url: 'app/panels/spatial/data/frdep.json'
            }, {
-             key: 'France - Régions',
+             key: 'France - Régions 2015',
              type: 'GEOJSON',
              url: 'app/panels/spatial/data/frreg2015.json'
+           }, {
+             key: 'France - Régions 2016',
+             type: 'GEOJSON',
+             url: 'app/panels/spatial/data/frreg2016.json'
            }, {
              key: 'URL',
              type: 'GEOJSON',
