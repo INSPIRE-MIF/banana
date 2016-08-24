@@ -381,6 +381,6 @@
       "dashboard",
       "data"
     ],
-    "global_params": "&fq=documentType:metadata",
+    "global_params": "&fq=documentType:metadata"
   }
 }
