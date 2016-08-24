@@ -22,27 +22,27 @@ function (angular, config, _) {
     // FIXME : this is duplicated from app.module.js
     $scope.navLinks = [{
       id: 'home',
-      icon: 'glyphicon-home',
+      icon: 'fa-home',
       url: '../#/',
       needsLogin: false
     }, {
       id: 'dashboard',
-      icon: 'glyphicon-stats',
+      icon: 'fa-bar-chart',
       url: '#/dashboard/solr/INSPIRE%20Indicator%20trends',
       needsLogin: false
     }, {
       id: 'monitoring',
-      icon: 'glyphicon-list-alt',
+      icon: 'fa-list-alt',
       url: '../#/monitoring/manage',
       needsLogin: false
     }, {
       id: 'harvesting',
-      icon: 'glyphicon-download-alt',
+      icon: 'fa-cloud-download',
       url: '../#/harvesting/manage',
       needsLogin: false
     }, {
       id: 'admin',
-      icon: 'glyphicon-cog',
+      icon: 'fa-cog',
       url: '/solr/', // TODO: it may be a different URL
       needsLogin: true
     }];
