@@ -430,7 +430,7 @@
             "value_type": "cumulative",
             "query_as_alias": false
           },
-          "title": "%age of spatial data sets for which a view service (NSi21), a download service (NSi22) or a view and download (NSi2) exist",
+          "title": "Percentage of spatial data sets for which a view service (NSi21), a download service (NSi22) or a view and download (NSi2) exist",
           "show_help_message": false,
           "info_mode": "html",
           "help_message": "",
@@ -593,7 +593,7 @@
             "value_type": "cumulative",
             "query_as_alias": true
           },
-          "title": "%age of spatial data sets and services with conformant metadata (MDi2)",
+          "title": "Percentage of spatial data sets and services with conformant metadata (MDi2)",
           "max_value": 1,
           "min_value": 0,
           "multivalueMode": "sum"
@@ -1019,7 +1019,7 @@
             "value_type": "cumulative",
             "query_as_alias": true
           },
-          "title": "%age of all conformant network services: discovery (NSi41), view (NSi42), download (NSi43), transformation (NSi44) total (NSi4)",
+          "title": "Percentage of all conformant network services: discovery (NSi41), view (NSi42), download (NSi43), transformation (NSi44) total (NSi4)",
           "max_value": 1,
           "min_value": 0,
           "multivalueMode": "sum"
