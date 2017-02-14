@@ -1,0 +1,839 @@
+{
+  "title": "INSPIRE Monitoring Raw Data statistics by Member State",
+  "services": {
+    "query": {
+      "idQueue": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "list": {
+        "0": {
+          "query": "*:*",
+          "alias": "",
+          "color": "#7EB26D",
+          "id": 0,
+          "pin": false,
+          "type": "lucene"
+        }
+      },
+      "ids": [
+        0
+      ]
+    },
+    "filter": {
+      "idQueue": [
+        0,
+        1
+      ],
+      "list": {},
+      "ids": []
+    }
+  },
+  "rows": [
+    {
+      "title": "Member State selector",
+      "height": "150px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 12,
+          "editable": true,
+          "type": "tagcloud",
+          "loadingEditor": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:monitoringMetadata&wt=json&rows=0&facet=true&facet.sort=index&facet.field=territory&facet.limit=34",
+            "custom": ""
+          },
+          "field": "territory",
+          "mode": "toggle",
+          "sort": "index",
+          "toggleLayout": "buttons",
+          "exclude": [],
+          "size": 34,
+          "alignment": "vertical and horizontal",
+          "fontScale": 1,
+          "isSizeAdjusted": true,
+          "isCountDisplayed": false,
+          "spyable": true,
+          "show_queries": true
+        }
+      ]
+    },
+    {
+      "title": "Query",
+      "height": "50px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 9,
+          "editable": true,
+          "group": [
+            "default"
+          ],
+          "type": "query",
+          "label": "Search",
+          "history": [],
+          "remember": 10,
+          "pinned": true,
+          "query": "*",
+          "title": "Search",
+          "spyable": true,
+          "def_type": ""
+        },
+        {
+          "span": 3,
+          "editable": true,
+          "type": "hits",
+          "loadingEditor": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:monitoringMetadata&wt=json&rows=0\n",
+            "basic_query": "",
+            "custom": ""
+          },
+          "style": {
+            "font-size": "14pt"
+          },
+          "arrangement": "horizontal",
+          "chart": "total",
+          "counter_pos": "above",
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "spyable": true,
+          "title": "Total Hits",
+          "mode": "count",
+          "show_queries": true
+        }
+      ]
+    },
+    {
+      "title": "Filter",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 5,
+          "editable": true,
+          "spyable": true,
+          "group": [
+            "default"
+          ],
+          "type": "filtering"
+        },
+        {
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:monitoringMetadata&wt=json&rows=0&facet=true&facet.field=resourceType&facet.limit=10&facet.missing=true&f.resourceType.facet.sort=count",
+            "custom": ""
+          },
+          "mode": "count",
+          "field": "resourceType",
+          "stats_field": "",
+          "decimal_points": 0,
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "sortBy": "count",
+          "order": "descending",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "logAxis": false,
+          "arrangement": "horizontal",
+          "chart": "pie",
+          "counter_pos": "none",
+          "lastColor": "",
+          "spyable": true,
+          "show_queries": true,
+          "colorMode": "list",
+          "chartColors": [
+            "#7EB26D",
+            "#EAB839",
+            "#6ED0E0",
+            "#EF843C",
+            "#E24D42",
+            "#1F78C1",
+            "#BA43A9",
+            "#705DA0",
+            "#508642",
+            "#CCA300",
+            "#447EBC",
+            "#C15C17",
+            "#890F02",
+            "#0A437C",
+            "#6D1F62",
+            "#584477",
+            "#B7DBAB",
+            "#F4D598",
+            "#70DBED",
+            "#F9BA8F",
+            "#F29191",
+            "#82B5D8",
+            "#E5A8E2",
+            "#AEA2E0",
+            "#629E51",
+            "#E5AC0E",
+            "#64B0C8",
+            "#E0752D",
+            "#BF1B00",
+            "#0A50A1",
+            "#962D82",
+            "#614D93",
+            "#9AC48A",
+            "#F2C96D",
+            "#65C5DB",
+            "#F9934E",
+            "#EA6460",
+            "#5195CE",
+            "#D683CE",
+            "#806EB7",
+            "#3F6833",
+            "#967302",
+            "#2F575E",
+            "#99440A",
+            "#58140C",
+            "#052B51",
+            "#511749",
+            "#3F2B5B",
+            "#E0F9D7",
+            "#FCEACA",
+            "#CFFAFF",
+            "#F9E2D2",
+            "#FCE2DE",
+            "#BADFF4",
+            "#F9D9F9",
+            "#DEDAF7"
+          ],
+          "chartColorPalette": [],
+          "title": "TYPE OF RESOURCES"
+        },
+        {
+          "span": 3,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:monitoringMetadata&wt=json&rows=0&facet=true&facet.field=inspireAnnex&facet.limit=4&facet.missing=true&f.inspireAnnex.facet.sort=count",
+            "custom": ""
+          },
+          "mode": "count",
+          "field": "inspireAnnex",
+          "stats_field": "",
+          "decimal_points": 0,
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 4,
+          "sortBy": "count",
+          "order": "descending",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "logAxis": false,
+          "arrangement": "horizontal",
+          "chart": "pie",
+          "counter_pos": "none",
+          "lastColor": "",
+          "spyable": true,
+          "show_queries": true,
+          "colorMode": "list",
+          "chartColors": [
+            "#7EB26D",
+            "#EAB839",
+            "#6ED0E0",
+            "#EF843C",
+            "#E24D42",
+            "#1F78C1",
+            "#BA43A9",
+            "#705DA0",
+            "#508642",
+            "#CCA300",
+            "#447EBC",
+            "#C15C17",
+            "#890F02",
+            "#0A437C",
+            "#6D1F62",
+            "#584477",
+            "#B7DBAB",
+            "#F4D598",
+            "#70DBED",
+            "#F9BA8F",
+            "#F29191",
+            "#82B5D8",
+            "#E5A8E2",
+            "#AEA2E0",
+            "#629E51",
+            "#E5AC0E",
+            "#64B0C8",
+            "#E0752D",
+            "#BF1B00",
+            "#0A50A1",
+            "#962D82",
+            "#614D93",
+            "#9AC48A",
+            "#F2C96D",
+            "#65C5DB",
+            "#F9934E",
+            "#EA6460",
+            "#5195CE",
+            "#D683CE",
+            "#806EB7",
+            "#3F6833",
+            "#967302",
+            "#2F575E",
+            "#99440A",
+            "#58140C",
+            "#052B51",
+            "#511749",
+            "#3F2B5B",
+            "#E0F9D7",
+            "#FCEACA",
+            "#CFFAFF",
+            "#F9E2D2",
+            "#FCE2DE",
+            "#BADFF4",
+            "#F9D9F9",
+            "#DEDAF7"
+          ],
+          "chartColorPalette": [],
+          "title": "NUMBER OF RECORD PER ANNEX"
+        }
+      ]
+    },
+    {
+      "title": "INSPIRE statistics",
+      "height": "550px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 9,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:monitoringMetadata&wt=json&rows=0&facet=true&facet.field=inspireTheme&facet.limit=35&facet.missing=true&f.inspireTheme.facet.sort=count",
+            "custom": ""
+          },
+          "mode": "count",
+          "field": "inspireTheme",
+          "stats_field": "",
+          "decimal_points": 0,
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 35,
+          "sortBy": "count",
+          "order": "descending",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "logAxis": false,
+          "arrangement": "horizontal",
+          "chart": "pie",
+          "counter_pos": "right",
+          "lastColor": "",
+          "spyable": true,
+          "show_queries": true,
+          "colorMode": "list",
+          "chartColors": [
+            "#7EB26D",
+            "#EAB839",
+            "#6ED0E0",
+            "#EF843C",
+            "#E24D42",
+            "#1F78C1",
+            "#BA43A9",
+            "#705DA0",
+            "#508642",
+            "#CCA300",
+            "#447EBC",
+            "#C15C17",
+            "#890F02",
+            "#0A437C",
+            "#6D1F62",
+            "#584477",
+            "#B7DBAB",
+            "#F4D598",
+            "#70DBED",
+            "#F9BA8F",
+            "#F29191",
+            "#82B5D8",
+            "#E5A8E2",
+            "#AEA2E0",
+            "#629E51",
+            "#E5AC0E",
+            "#64B0C8",
+            "#E0752D",
+            "#BF1B00",
+            "#0A50A1",
+            "#962D82",
+            "#614D93",
+            "#9AC48A",
+            "#F2C96D",
+            "#65C5DB",
+            "#F9934E",
+            "#EA6460",
+            "#5195CE",
+            "#D683CE",
+            "#806EB7",
+            "#3F6833",
+            "#967302",
+            "#2F575E",
+            "#99440A",
+            "#58140C",
+            "#052B51",
+            "#511749",
+            "#3F2B5B",
+            "#E0F9D7",
+            "#FCEACA",
+            "#CFFAFF",
+            "#F9E2D2",
+            "#FCE2DE",
+            "#BADFF4",
+            "#F9D9F9",
+            "#DEDAF7"
+          ],
+          "chartColorPalette": [],
+          "title": "NUMBER OF RECORD PER THEMES"
+        },
+        {
+          "span": 3,
+          "editable": true,
+          "type": "facet",
+          "loadingEditor": false,
+          "status": "Stable",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:monitoringMetadata&facet=true&facet.field=reportingYear&facet.field=territory&facet.field=resourceType&facet.field=custodianOrgForResource&wt=json",
+            "basic_query": "q=*%3A*&fq=documentType:monitoringMetadata&facet=true&facet.field=reportingYear&facet.field=territory&facet.field=resourceType&facet.field=custodianOrgForResource",
+            "custom": ""
+          },
+          "group": "default",
+          "style": {
+            "font-size": "9pt"
+          },
+          "overflow": "min-height",
+          "fields": [
+            "reportingYear",
+            "territory",
+            "resourceType",
+            "custodianOrgForResource"
+          ],
+          "field_list": true,
+          "spyable": true,
+          "facet_limit": 40,
+          "foundResults": true,
+          "header_title": "",
+          "toggle_element": null,
+          "show_queries": true,
+          "title": "Narrow your search",
+          "offset": 0,
+          "exportSize": null
+        }
+      ]
+    },
+    {
+      "title": "Type of resources",
+      "height": "350px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "chartColorPalette": [
+            {
+              "label": "true",
+              "color": "#00ff00"
+            },
+            {
+              "label": "false",
+              "color": "#ff0000"
+            }
+          ],
+          "colorMode": "listWithValues",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:monitoringMetadata&wt=json&rows=0&facet=true&facet.field=isAboveThreshold&facet.limit=10&facet.missing=true&f.isAboveThreshold.facet.sort=count",
+            "custom": ""
+          },
+          "mode": "count",
+          "field": "isAboveThreshold",
+          "stats_field": "",
+          "decimal_points": 0,
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "sortBy": "count",
+          "order": "descending",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "logAxis": false,
+          "arrangement": "horizontal",
+          "chart": "pie",
+          "counter_pos": "none",
+          "lastColor": "",
+          "spyable": true,
+          "show_queries": true,
+          "chartColors": [
+            "#7EB26D",
+            "#EAB839",
+            "#6ED0E0",
+            "#EF843C",
+            "#E24D42",
+            "#1F78C1",
+            "#BA43A9",
+            "#705DA0",
+            "#508642",
+            "#CCA300",
+            "#447EBC",
+            "#C15C17",
+            "#890F02",
+            "#0A437C",
+            "#6D1F62",
+            "#584477",
+            "#B7DBAB",
+            "#F4D598",
+            "#70DBED",
+            "#F9BA8F",
+            "#F29191",
+            "#82B5D8",
+            "#E5A8E2",
+            "#AEA2E0",
+            "#629E51",
+            "#E5AC0E",
+            "#64B0C8",
+            "#E0752D",
+            "#BF1B00",
+            "#0A50A1",
+            "#962D82",
+            "#614D93",
+            "#9AC48A",
+            "#F2C96D",
+            "#65C5DB",
+            "#F9934E",
+            "#EA6460",
+            "#5195CE",
+            "#D683CE",
+            "#806EB7",
+            "#3F6833",
+            "#967302",
+            "#2F575E",
+            "#99440A",
+            "#58140C",
+            "#052B51",
+            "#511749",
+            "#3F2B5B",
+            "#E0F9D7",
+            "#FCEACA",
+            "#CFFAFF",
+            "#F9E2D2",
+            "#FCE2DE",
+            "#BADFF4",
+            "#F9D9F9",
+            "#DEDAF7"
+          ],
+          "title": "Metadata conformity"
+        },
+        {
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "chartColorPalette": [
+            {
+              "label": "true",
+              "color": "#00ff00"
+            },
+            {
+              "label": "false",
+              "color": "#ff0000"
+            }
+          ],
+          "colorMode": "listWithValues",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:monitoringMetadata&wt=json&rows=0&facet=true&facet.field=inspireConformResource&facet.limit=10&facet.missing=true&f.inspireConformResource.facet.sort=count",
+            "custom": ""
+          },
+          "mode": "count",
+          "field": "inspireConformResource",
+          "stats_field": "",
+          "decimal_points": 0,
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 10,
+          "sortBy": "count",
+          "order": "descending",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "logAxis": false,
+          "arrangement": "horizontal",
+          "chart": "pie",
+          "counter_pos": "none",
+          "lastColor": "",
+          "spyable": true,
+          "show_queries": true,
+          "chartColors": [
+            "#7EB26D",
+            "#EAB839",
+            "#6ED0E0",
+            "#EF843C",
+            "#E24D42",
+            "#1F78C1",
+            "#BA43A9",
+            "#705DA0",
+            "#508642",
+            "#CCA300",
+            "#447EBC",
+            "#C15C17",
+            "#890F02",
+            "#0A437C",
+            "#6D1F62",
+            "#584477",
+            "#B7DBAB",
+            "#F4D598",
+            "#70DBED",
+            "#F9BA8F",
+            "#F29191",
+            "#82B5D8",
+            "#E5A8E2",
+            "#AEA2E0",
+            "#629E51",
+            "#E5AC0E",
+            "#64B0C8",
+            "#E0752D",
+            "#BF1B00",
+            "#0A50A1",
+            "#962D82",
+            "#614D93",
+            "#9AC48A",
+            "#F2C96D",
+            "#65C5DB",
+            "#F9934E",
+            "#EA6460",
+            "#5195CE",
+            "#D683CE",
+            "#806EB7",
+            "#3F6833",
+            "#967302",
+            "#2F575E",
+            "#99440A",
+            "#58140C",
+            "#052B51",
+            "#511749",
+            "#3F2B5B",
+            "#E0F9D7",
+            "#FCEACA",
+            "#CFFAFF",
+            "#F9E2D2",
+            "#FCE2DE",
+            "#BADFF4",
+            "#F9D9F9",
+            "#DEDAF7"
+          ],
+          "title": "Resource conformity"
+        }
+      ]
+    },
+    {
+      "title": "Events",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 12,
+          "editable": true,
+          "type": "table",
+          "loadingEditor": false,
+          "status": "Stable",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ],
+            "query": "q=*%3A*&fq=documentType:monitoringMetadata&sort=resourceTitle desc&wt=json&rows=500&fl=contact,custodianOrgForResource,id,inspireAnnex,inspireConformResource,inspireTheme,isAboveThreshold,linkUrl,metadataIdentifier,recordOperatedByType,reportingDate,reportingDateSubmission,reportingYear,resourceTitle,resourceType,serviceType,territory",
+            "basic_query": "q=*%3A*&fq=documentType:monitoringMetadata&sort=resourceTitle desc&fl=contact,custodianOrgForResource,id,inspireAnnex,inspireConformResource,inspireTheme,isAboveThreshold,linkUrl,metadataIdentifier,recordOperatedByType,reportingDate,reportingDateSubmission,reportingYear,resourceTitle,resourceType,serviceType,territory",
+            "custom": ""
+          },
+          "size": 100,
+          "pages": 5,
+          "offset": 0,
+          "sort": [
+            "resourceTitle",
+            "desc"
+          ],
+          "group": "default",
+          "style": {
+            "font-size": "8pt"
+          },
+          "overflow": "min-height",
+          "fields": [
+            "custodianOrgForResource",
+            "resourceType",
+            "resourceTitle",
+            "serviceType",
+            "territory"
+          ],
+          "isLoadingImportantFieldOnly": true,
+          "important_fields": [
+            "contact",
+            "custodianOrgForResource",
+            "id",
+            "inspireAnnex",
+            "inspireConformResource",
+            "inspireTheme",
+            "isAboveThreshold",
+            "linkUrl",
+            "metadataIdentifier",
+            "recordOperatedByType",
+            "reportingDate",
+            "reportingDateSubmission",
+            "reportingYear",
+            "resourceTitle",
+            "resourceType",
+            "serviceType",
+            "territory"
+          ],
+          "highlight": [],
+          "sortable": true,
+          "header": true,
+          "paging": true,
+          "field_list": false,
+          "trimFactor": 300,
+          "normTimes": true,
+          "spyable": true,
+          "saveOption": "json",
+          "exportSize": 500,
+          "exportAll": true,
+          "displayLinkIcon": true,
+          "imageFields": [],
+          "imgFieldWidth": "auto",
+          "imgFieldHeight": "85px",
+          "show_queries": true,
+          "couchbase": {
+            "bucket": "",
+            "document": "",
+            "view": ""
+          },
+          "overflowItems": [
+            {
+              "key": "scroll",
+              "value": "height"
+            },
+            {
+              "key": "expand",
+              "value": "min-height"
+            }
+          ],
+          "title": "Raw data"
+        }
+      ]
+    }
+  ],
+  "editable": true,
+  "index": {
+    "interval": "none",
+    "pattern": "[logstash-]YYYY.MM.DD",
+    "default": "_all"
+  },
+  "style": "light",
+  "failover": false,
+  "panel_hints": true,
+  "loader": {
+    "save_gist": false,
+    "save_elasticsearch": true,
+    "save_local": true,
+    "save_default": true,
+    "save_temp": true,
+    "save_temp_ttl_enable": true,
+    "save_temp_ttl": "30d",
+    "load_gist": true,
+    "load_elasticsearch": true,
+    "load_elasticsearch_size": 30,
+    "load_local": true,
+    "hide": false,
+    "dropdown_collections": false
+  },
+  "solr": {
+    "server": "/${solr.webapp.name}/",
+    "core_name": "${solr.core.data}",
+    "core_list": [
+      "dashboard",
+      "data"
+    ],
+    "global_params": "&fq=documentType:monitoringMetadata",
+    "zkHost": "http://localhost:9998/znodes/v1/",
+    "server_type": "solr_server"
+  },
+  "server_type": "solr_server"
+}
