@@ -24,7 +24,7 @@
       "list": {
         "0": {
           "from": "2010-09-13T06:08:38.000Z",
-          "to": "2016-09-13T06:08:38.000Z",
+          "to": "2017-09-13T06:08:38.000Z",
           "field": "reportingDate",
           "type": "time",
           "mandate": "must",
@@ -78,7 +78,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"territory\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"territory\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:dsv_num"
           },
           "max_rows": 100000,
@@ -142,7 +142,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(MDv11 or MDv12 or MDv13)"
           },
           "max_rows": 100000,
@@ -214,7 +214,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"territory\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"territory\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(SDSv_Num)"
           },
           "max_rows": 100000,
@@ -276,7 +276,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(NSv_NumViewServ or NSv_NumDiscServ or NSv_NumDownlServ or NSv_NumInvkServ or NSv_NumTransfServ)"
           },
           "max_rows": 100000,
@@ -347,7 +347,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"avg(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"avg(indicatorValue)\"}}}}}\n",
             "custom": "&fq=(indicatorName:NSi21 OR  indicatorName:NSi22 OR indicatorName:NSi2)"
           },
           "max_rows": 100000,
@@ -411,7 +411,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1002,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1002,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=(indicatorName:NSv21 OR indicatorName:NSv22 OR indicatorName:NSv23 OR indicatorName:MDv1_DS)"
           },
           "max_rows": 1002,
@@ -507,7 +507,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"avg(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"avg(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:MDi2"
           },
           "max_rows": 100000,
@@ -569,7 +569,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(MDv24 OR MDv14)"
           },
           "max_rows": 100000,
@@ -640,7 +640,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(MDv2_DS OR MDv1_DS)"
           },
           "max_rows": 100000,
@@ -702,7 +702,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(MDv21 or MDv22 or MDv23)"
           },
           "max_rows": 100000,
@@ -793,7 +793,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(DSv21 or DSv22 or DSv23)"
           },
           "max_rows": 100000,
@@ -864,7 +864,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(NSv41 or NSv42 or NSv43 or NSv44 or NSv45)"
           },
           "max_rows": 100000,
@@ -926,7 +926,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202016-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2016-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"avg(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-09-13T06:08:38.000Z%20TO%202017-09-13T06:08:38.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-09-13T06:08:38.000Z&facet.range.end=2017-09-13T06:08:38.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"avg(indicatorValue)\"}}}}}\n",
             "custom": "&fq=(indicatorName:NSi41 OR indicatorName:NSi42 OR indicatorName:NSi43 OR indicatorName:NSi44 OR indicatorName:NSi4)"
           },
           "max_rows": 100000,
@@ -1017,7 +1017,7 @@
           "title": "",
           "time": {
             "from": "09/13/2010 08:08:38",
-            "to": "09/13/2016 08:08:38"
+            "to": "09/13/2017 08:08:38"
           }
         },
         {

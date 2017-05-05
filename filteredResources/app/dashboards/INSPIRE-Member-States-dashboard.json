@@ -24,7 +24,7 @@
       "list": {
         "0": {
           "from": "2010-07-06T06:38:42.000Z",
-          "to": "2016-07-06T06:38:42.000Z",
+          "to": "2017-07-06T06:38:42.000Z",
           "field": "reportingDate",
           "type": "time",
           "mandate": "must",
@@ -56,7 +56,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.sort=index&facet.field=territory&facet.limit=35",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&facet=true&facet.sort=index&facet.field=territory&facet.limit=35",
             "custom": ""
           },
           "field": "territory",
@@ -115,7 +115,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue\n",
             "custom": "&fq=indicatorName:dsv_num"
           },
           "max_rows": 100000,
@@ -177,7 +177,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:(MDv11 or MDv12 or MDv13)"
           },
           "max_rows": 100000,
@@ -249,7 +249,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:(MDv14 or SDSv_Num)"
           },
           "max_rows": 100000,
@@ -311,7 +311,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:(NSv_NumViewServ or NSv_NumDiscServ or NSv_NumDownlServ or NSv_NumInvkServ or NSv_NumTransfServ)"
           },
           "max_rows": 100000,
@@ -382,7 +382,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2017-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=(indicatorName:NSi21 OR  indicatorName:NSi22 OR indicatorName:NSi2)"
           },
           "max_rows": 1000,
@@ -450,7 +450,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2017-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":1000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=(indicatorName:NSv21 OR indicatorName:NSv22 OR indicatorName:NSv23 OR indicatorName:MDv1_DS)"
           },
           "max_rows": 1000,
@@ -545,7 +545,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:MDi2"
           },
           "max_rows": 100000,
@@ -609,7 +609,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:(MDv24 OR MDv14)"
           },
           "max_rows": 100000,
@@ -681,7 +681,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:(MDv2_DS OR MDv1_DS)"
           },
           "max_rows": 100000,
@@ -744,7 +744,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2016-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=0&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&facet=true&facet.range=reportingDate&facet.range.start=2010-07-06T06:38:42.000Z&facet.range.end=2017-07-06T06:38:42.000Z&facet.range.gap=%2B1YEAR&json.facet={\"group\":{\"type\":\"terms\",\"field\":\"indicatorName\",\"limit\":100000,\"facet\":{\"values\":{\"type\":\"terms\",\"field\":\"reportingDate\",\"facet\":{\"value\":\"sum(indicatorValue)\"}}}}}\n",
             "custom": "&fq=indicatorName:(MDv21 OR MDv22 OR MDv23)"
           },
           "max_rows": 100000,
@@ -836,7 +836,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:(DSv21 or DSv22 or DSv23)"
           },
           "max_rows": 100000,
@@ -908,7 +908,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=(indicatorName:NSv41 OR indicatorName:NSv42 OR indicatorName:NSv43 OR indicatorName:NSv44 OR indicatorName:NSv4)"
           },
           "max_rows": 100000,
@@ -971,7 +971,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=(indicatorName:NSi41 OR indicatorName:NSi42 OR indicatorName:NSi43 OR indicatorName:NSi44 OR indicatorName:NSi4)"
           },
           "max_rows": 100000,
@@ -1062,7 +1062,7 @@
           "title": "",
           "time": {
             "from": "07/06/2010 08:38:42",
-            "to": "07/06/2016 08:38:42"
+            "to": "07/06/2017 08:38:42"
           }
         },
         {
@@ -1094,7 +1094,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:NSv31"
           },
           "max_rows": 100000,
@@ -1157,7 +1157,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:NSv32"
           },
           "max_rows": 100000,
@@ -1219,7 +1219,7 @@
             "ids": [
               0
             ],
-            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202016-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
+            "query": "q=*%3A*&fq=documentType:indicator&wt=json&rows=100000&fq=reportingDate:[2010-07-06T06:38:42.000Z%20TO%202017-07-06T06:38:42.000Z]&fl=reportingDate indicatorValue&group=true&group.field=indicatorName&group.limit=100000\n",
             "custom": "&fq=indicatorName:NSv33"
           },
           "max_rows": 100000,
