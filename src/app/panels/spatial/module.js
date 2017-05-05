@@ -774,7 +774,8 @@ define([
               filterSrv.set({
                 type: 'querystring',
                 query: $scope.panel.thematicField +
-                ':"' + feature.getProperties()[$scope.panel.thematicLayerField] + '"'
+                ':"' + $scope.panel.facetPrefix + 
+                feature.getProperties()[$scope.panel.thematicLayerField] + '"'
               }, filterId.length === 0 ? undefined : filterId[0]);
 
               dashboard.refresh();
